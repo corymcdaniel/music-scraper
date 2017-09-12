@@ -61,6 +61,7 @@ if (process.env.NODE_ENV !== 'production') {
 models.sequelize.sync().then(() => {
   app.listen(app.get('port'), function () {
     log.info('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
+    require('./scrapers')();
   });
 });
 
